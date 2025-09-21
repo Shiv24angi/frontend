@@ -41,37 +41,37 @@ export default function AddIncome() {
   };
 
   return (
-    <div className="p-8 min-h-screen bg-white text-[#262626]">
-      <h1 className="text-3xl font-bold mb-8 text-[#FF9900]">Add Income</h1>
+    <div className="px-6 lg:px-10 py-8 min-h-screen text-[#0F172A]">
+      <h1 className="text-3xl font-bold mb-8 text-emerald-700">Add Income</h1>
 
       {/* Form */}
-      <form onSubmit={handleSubmit} className="p-6 rounded-2xl shadow-lg max-w-md mb-8 bg-gray-50">
-        <input type="number" placeholder="Amount" value={form.amount} onChange={e => setForm({ ...form, amount: e.target.value })} className="mb-4 p-3 w-full rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF9900]" required />
-        <input type="date" placeholder="Date" value={form.date} onChange={e => setForm({ ...form, date: e.target.value })} className="mb-4 p-3 w-full rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF9900]" required />
-        <button type="submit" className="w-full px-6 py-3 rounded-xl font-semibold transition-transform duration-200 transform hover:scale-105 bg-[#FF9900] text-white">Add Income</button>
+      <form onSubmit={handleSubmit} className="p-6 rounded-2xl shadow-lg max-w-md mb-8 bg-white border border-emerald-50 mx-auto">
+        <input type="number" placeholder="Amount" value={form.amount} onChange={e => setForm({ ...form, amount: e.target.value })} className="mb-4 p-3 w-full rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500" required />
+        <input type="date" placeholder="Date" value={form.date} onChange={e => setForm({ ...form, date: e.target.value })} className="mb-4 p-3 w-full rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500" required />
+        <button type="submit" className="w-full px-6 py-3 rounded-xl font-semibold transition-transform duration-200 transform hover:scale-105 bg-emerald-600 hover:bg-emerald-700 text-white">Add Income</button>
       </form>
 
       {/* Delete All & Income List Container */}
-      <div className="max-w-xl">
+      <div className="max-w-xl mx-auto">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold text-gray-800">Recent Income</h2>
-          <button onClick={handleDeleteAll} className="px-4 py-2 rounded-xl text-sm font-medium transition-transform duration-200 transform hover:scale-105 bg-red-500 text-white">Delete All</button>
+          <button onClick={handleDeleteAll} className="px-5 py-3 rounded-xl text-base font-semibold transition-transform duration-200 transform hover:scale-105 bg-rose-600 text-white">Delete All</button>
         </div>
         
         {/* Income List */}
-        <div className="p-6 rounded-2xl shadow-lg bg-gray-50">
+        <div className="p-6 rounded-2xl shadow-lg bg-white border border-emerald-50">
           {income.length === 0 ? (
             <p className="text-center text-gray-400">No income added yet.</p>
           ) : (
             <ul className="space-y-4">
               {income.map(inc => (
-                <li key={inc.id} className="flex justify-between items-center p-4 rounded-lg bg-white border border-gray-200 transition-transform duration-200 transform hover:scale-[1.01] hover:shadow-md">
+                <li key={inc.id} className="flex justify-between items-center p-4 rounded-lg bg-white border border-emerald-50 transition-transform duration-200 transform hover:scale-[1.01] hover:shadow-md">
                   <div className="flex-1">
                     <span className="text-lg font-semibold text-green-600">+₹{inc.amount}</span>
                   </div>
                   <div className="flex items-center space-x-4">
                     <span className="text-sm text-gray-500">{inc.date}</span>
-                    <button onClick={() => handleDelete(inc.id)} className="px-3 py-1 rounded-lg text-xs font-medium bg-red-100 text-red-600 transition-colors hover:bg-red-200">Delete</button>
+                    <button onClick={() => handleDelete(inc.id)} className="px-3 py-1 rounded-lg text-xs font-medium bg-rose-100 text-rose-700 transition-colors hover:bg-rose-200">Delete</button>
                   </div>
                 </li>
               ))}
