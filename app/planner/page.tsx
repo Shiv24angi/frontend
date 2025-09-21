@@ -36,8 +36,9 @@ export default function Planner({ totalIncome, totalExpense }: PlannerProps) {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white p-8 rounded-2xl shadow-lg text-gray-800">
-      <h2 className="text-3xl font-bold mb-6 text-emerald-700">Set Your Savings Goal</h2>
+    <div className="min-h-screen flex items-center justify-center px-6 lg:px-10">
+      <div className="max-w-md w-full bg-white p-8 rounded-2xl shadow-lg text-gray-800">
+        <h2 className="text-3xl font-bold mb-6 text-emerald-700">Set Your Savings Goal</h2>
 
       {/* Input Fields */}
       <div className="flex flex-col gap-6 mb-8">
@@ -87,6 +88,7 @@ export default function Planner({ totalIncome, totalExpense }: PlannerProps) {
           )}
         </div>
       )}
+      </div>
     </div>
   );
 }
