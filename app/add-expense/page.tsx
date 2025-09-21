@@ -46,7 +46,7 @@ export default function AddExpense() {
   };
 
   return (
-    <div className="px-6 lg:px-10 py-8 min-h-screen text-[#0F172A]">
+    <div className="min-h-screen flex flex-col items-center justify-center px-6 lg:px-10 text-[#0F172A]">
       <h1 className="text-3xl font-bold mb-8 text-emerald-700">Add Expense</h1>
 
       {/* Form */}
@@ -63,7 +63,7 @@ export default function AddExpense() {
       <div className="max-w-xl mx-auto">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold text-gray-800">Recent Expenses</h2>
-          <button onClick={handleDeleteAll} className="px-5 py-3 rounded-xl text-base font-semibold transition-transform duration-200 transform hover:scale-105 bg-rose-600 text-white">Delete All</button>
+          <button onClick={handleDeleteAll} className="px-5 py-3 rounded-xl text-base font-semibold transition-transform duration-200 transform hover:scale-105 bg-rose-600 text-white border border-rose-600/20 ring-1 ring-rose-300/40 hover:ring-2 hover:shadow-md">Delete All</button>
         </div>
 
         {/* Expense List */}
@@ -80,7 +80,7 @@ export default function AddExpense() {
                   </div>
                   <div className="flex items-center space-x-4">
                     <span className="text-xl font-bold text-rose-600">-₹{exp.amount}</span>
-                    <button onClick={() => handleDelete(exp.id)} className="px-3 py-1 rounded-lg text-xs font-medium bg-rose-100 text-rose-700 transition-colors hover:bg-rose-200">Delete</button>
+                    <button onClick={() => handleDelete(exp.id)} className="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-rose-700 border border-rose-300 transition-colors hover:bg-rose-50">Delete</button>
                   </div>
                 </li>
               ))}
