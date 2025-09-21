@@ -28,13 +28,13 @@ export default function ExpensesPage() {
   const totalExpense = expenses.reduce((sum, e) => sum + e.amount, 0);
 
   return (
-    <div className="min-h-screen p-8 bg-white text-[#262626]">
-      <h1 className="text-3xl font-bold mb-6 text-[#FF9900]">
+    <div className="min-h-screen px-6 lg:px-10 py-8 text-[#0F172A]">
+      <h1 className="text-3xl font-bold mb-6 text-emerald-700">
         Expense Breakdown
       </h1>
 
-      <div className="mb-8 p-6 rounded-2xl shadow-lg bg-gray-50">
-        <p className="text-2xl font-bold text-red-600">
+      <div className="mb-8 p-6 rounded-2xl shadow-lg bg-white border border-emerald-50">
+        <p className="text-2xl font-bold text-rose-600">
           Total Expense: ₹{totalExpense}
         </p>
       </div>
@@ -42,21 +42,21 @@ export default function ExpensesPage() {
       <div className="overflow-x-auto rounded-2xl shadow-lg">
         <table className="min-w-full bg-white">
           <thead>
-            <tr className="bg-[#FFC700] text-white">
-              <th className="py-4 px-6 text-left font-bold text-[#262626] rounded-tl-2xl">Date</th>
-              <th className="py-4 px-6 text-left font-bold text-[#262626]">Merchant</th>
-              <th className="py-4 px-6 text-left font-bold text-[#262626]">Category</th>
-              <th className="py-4 px-6 text-right font-bold text-[#262626]">Amount (₹)</th>
+            <tr className="bg-emerald-50 text-emerald-800">
+              <th className="py-4 px-6 text-left font-bold text-emerald-800 rounded-tl-2xl">Date</th>
+              <th className="py-4 px-6 text-left font-bold text-emerald-800">Merchant</th>
+              <th className="py-4 px-6 text-left font-bold text-emerald-800">Category</th>
+              <th className="py-4 px-6 text-right font-bold text-emerald-800">Amount (₹)</th>
               <th className="py-4 px-6 text-left font-bold text-[#262626] rounded-tr-2xl">Notes</th>
             </tr>
           </thead>
           <tbody>
             {expenses.map((exp, index) => (
-              <tr key={exp.id} className={`border-b border-gray-200 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
+              <tr key={exp.id} className={`border-b border-emerald-50 ${index % 2 === 0 ? 'bg-white' : 'bg-emerald-50/40'}`}>
                 <td className="py-4 px-6">{exp.date || '-'}</td>
                 <td className="py-4 px-6">{exp.merchant || '-'}</td>
                 <td className="py-4 px-6">{exp.category}</td>
-                <td className="py-4 px-6 text-right font-semibold text-red-500">{exp.amount}</td>
+                <td className="py-4 px-6 text-right font-semibold text-rose-600">{exp.amount}</td>
                 <td className="py-4 px-6">{exp.notes || '-'}</td>
               </tr>
             ))}
