@@ -30,39 +30,39 @@ export default function Dashboard() {
   const totalIncome = income.reduce((sum, i) => sum + i.amount, 0);
 
   return (
-    <div className="flex min-h-screen bg-white text-[#262626]">
-      <main className="flex-1 p-8">
-        <h1 className="text-4xl font-bold mb-8 text-[#FF9900]">Dashboard</h1>
+    <div className="flex min-h-screen text-[#0F172A]">
+      <main className="flex-1 px-6 lg:px-10 py-8">
+        <h1 className="text-4xl font-bold mb-8 text-emerald-700">Dashboard</h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-10">
           {/* Total Income Card */}
-          <div className="p-6 rounded-2xl shadow-lg bg-gray-50">
-            <h2 className="font-semibold mb-2 text-gray-600">Total Income</h2>
-            <p className="text-3xl font-extrabold text-green-600">₹{totalIncome}</p>
+          <div className="card hover:shadow-xl">
+            <h2 className="font-semibold mb-2 text-slate-500">Total Income</h2>
+            <p className="text-3xl font-extrabold text-emerald-600">₹{totalIncome}</p>
           </div>
 
           {/* Total Expense Card */}
-          <div className="p-6 rounded-2xl shadow-lg bg-gray-50">
-            <h2 className="font-semibold mb-2 text-gray-600">Total Expense</h2>
-            <p className="text-3xl font-extrabold text-red-600">₹{totalExpense}</p>
+          <div className="card hover:shadow-xl">
+            <h2 className="font-semibold mb-2 text-slate-500">Total Expense</h2>
+            <p className="text-3xl font-extrabold text-rose-600">₹{totalExpense}</p>
           </div>
 
           {/* Savings Card */}
-          <div className="p-6 rounded-2xl shadow-lg bg-gray-50">
-            <h2 className="font-semibold mb-2 text-gray-600">Savings</h2>
-            <p className="text-3xl font-extrabold text-[#FFC700]">₹{totalIncome - totalExpense}</p>
+          <div className="card hover:shadow-xl">
+            <h2 className="font-semibold mb-2 text-slate-500">Savings</h2>
+            <p className="text-3xl font-extrabold text-emerald-700">₹{totalIncome - totalExpense}</p>
           </div>
         </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {/* Expense Chart */}
-          <div className="p-6 rounded-2xl shadow-lg bg-gray-50 flex-grow">
-            <h2 className="text-xl font-bold mb-4 text-[#FF9900]">Expenses by Category</h2>
+          <div className="card flex-grow">
+            <h2 className="text-xl font-bold mb-4 text-emerald-700">Expenses by Category</h2>
             <ExpenseChart expenses={expenses} />
           </div>
 
           {/* Savings Insight */}
-          <div className="p-6 rounded-2xl shadow-lg bg-gray-50 flex-grow">
+          <div className="card flex-grow">
             <SavingsInsight totalIncome={totalIncome} totalExpense={totalExpense} />
           </div>
         </div>

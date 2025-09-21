@@ -19,23 +19,25 @@ export default function ExpenseChart({ expenses }: Props) {
       {
         data: Object.values(dataMap),
         backgroundColor: [
-          '#FFC700', // Yellow
-          '#FF9900', // Orange
-          '#FF6B6B', // Light Red
-          '#60A5FA', // Blue
-          '#34D399', // Green
-          '#9A70FF', // Lavender
-          '#F87171', // Red
+          '#22C55E', // emerald-500
+          '#16A34A', // emerald-600
+          '#34D399', // emerald-400
+          '#86EFAC', // emerald-200
+          '#FBBF24', // amber-400 (highlight)
+          '#10B981', // teal/emerald mix
+          '#065F46', // deep emerald
         ],
+        borderColor: '#FFFFFF',
+        borderWidth: 2,
       },
     ],
   };
 
   if (!Object.keys(dataMap).length)
-    return <p className="text-gray-400 text-center mt-12">No expenses to show</p>;
+    return <p className="text-slate-400 text-center mt-12">No expenses to show</p>;
 
   return (
-    <div style={{ height: '250px', maxWidth: '300px', margin: '0 auto' }}>
+    <div style={{ height: '260px', maxWidth: '320px', margin: '0 auto' }}>
       <Pie data={data} />
     </div>
   );
