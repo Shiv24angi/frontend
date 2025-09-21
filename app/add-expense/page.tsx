@@ -50,7 +50,7 @@ export default function AddExpense() {
       <h1 className="text-3xl font-bold mb-8 text-emerald-700">Add Expense</h1>
 
       {/* Form */}
-      <form onSubmit={handleSubmit} className="p-6 rounded-2xl shadow-lg max-w-md mb-8 bg-white border border-emerald-50">
+      <form onSubmit={handleSubmit} className="p-6 rounded-2xl shadow-lg max-w-md mb-8 bg-white border border-emerald-50 mx-auto">
         <input type="number" placeholder="Amount" value={form.amount} onChange={e => setForm({ ...form, amount: e.target.value })} className="mb-4 p-3 w-full rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500" required />
         <input type="text" placeholder="Merchant" value={form.merchant} onChange={e => setForm({ ...form, merchant: e.target.value })} className="mb-4 p-3 w-full rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500" />
         <input type="text" placeholder="Category (optional)" value={form.category} onChange={e => setForm({ ...form, category: e.target.value })} className="mb-4 p-3 w-full rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500" />
@@ -60,10 +60,10 @@ export default function AddExpense() {
       </form>
 
       {/* Delete All & Expense List Container */}
-      <div className="max-w-xl">
+      <div className="max-w-xl mx-auto">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold text-gray-800">Recent Expenses</h2>
-          <button onClick={handleDeleteAll} className="px-4 py-2 rounded-xl text-sm font-medium transition-transform duration-200 transform hover:scale-105 bg-rose-600 text-white">Delete All</button>
+          <button onClick={handleDeleteAll} className="px-5 py-3 rounded-xl text-base font-semibold transition-transform duration-200 transform hover:scale-105 bg-rose-600 text-white">Delete All</button>
         </div>
 
         {/* Expense List */}
